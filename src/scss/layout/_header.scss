@@ -111,4 +111,119 @@
       }
     }
   }
+
+  &__menu-opener {
+    display: none;
+  }
+
+  @media (max-width: 700px) {
+    position: relative;
+    padding: 1rem;
+
+    nav {
+      display: none;
+    }
+
+    &__menu-opener {
+      display: block;
+      content: url("/assets/icon-menu.svg");
+      position: absolute;
+      right: 1rem;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    &.menu-opened {
+      > .header__menu-opener {
+        content: url("/assets/icon-close-menu.svg");
+      }
+
+      > .header__shadow-realm {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 998;
+        left: 0;
+        top: 0;
+        background-color: var(--shadow-overlay);
+        cursor: pointer;
+      }
+
+      > nav {
+        padding: 5rem 1rem;
+        display: block;
+        width: 60%;
+        height: 100vh;
+        position: fixed;
+        z-index: 999;
+        right: 0;
+        top: 0;
+        background-color: var(--almost-white);
+
+        .header__menu {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: flex-start;
+          font-weight: 500;
+
+          &__option-container {
+            justify-items: start;
+
+            &__suboptions {
+              position: static;
+              max-height: 0;
+              transform-origin: top;
+              transition: 500ms opacity ease-in-out, 300ms transform ease-in-out,
+                300ms max-height ease-in-out;
+              box-shadow: unset;
+              border-radius: 0;
+              padding: 0;
+
+              &__suboption {
+                display: flex;
+                align-items: flex-start;
+                gap: 1rem;
+                font-size: 0.8rem;
+                font-weight: 700;
+                &__icon {
+                }
+
+                &__text {
+                }
+              }
+            }
+
+            &.hovered-over {
+              > .header__menu__option-container__suboptions {
+                opacity: 1;
+                transform: scaleY(1);
+                max-height: 999px;
+                padding: 1rem;
+              }
+            }
+          }
+
+          &__login {
+            @include headerFontSettings();
+            margin-left: auto;
+            button {
+              background-color: transparent;
+              cursor: pointer;
+            }
+          }
+
+          &__register {
+            @include headerFontSettings();
+            button {
+              background-color: transparent;
+              cursor: pointer;
+              border: 1px solid var(--medium-gray);
+              padding: 0.7rem 1.3rem;
+              border-radius: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }

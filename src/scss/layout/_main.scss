@@ -11,6 +11,9 @@
     h1 {
       color: var(--almost-black);
       font-size: 5rem;
+      > span {
+        display: block;
+      }
     }
 
     p {
@@ -49,5 +52,59 @@
 
   &__giga-img {
     width: 100%;
+    content: url("/assets/image-hero-desktop.png");
+  }
+
+  @media (max-width: 900px) {
+    padding: 0.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &__info {
+      padding: 3rem 0;
+
+      h1 {
+        font-size: 2.1rem;
+        text-align: center;
+        span {
+          display: inline;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        width: 90%;
+        margin-inline: auto;
+        line-height: 1.7rem;
+        margin-block: 1.5rem;
+        text-align: center;
+        line-break: loose;
+      }
+
+      button {
+        margin-inline: auto;
+        display: block;
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 3rem;
+      }
+
+      &__logos {
+        justify-content: space-between;
+        width: 90%;
+        margin-inline: auto;
+
+        > img {
+          width: 20%;
+        }
+      }
+    }
+
+    &__giga-img {
+      content: url("/assets/image-hero-mobile.png");
+      grid-row: 1/3;
+    }
   }
 }

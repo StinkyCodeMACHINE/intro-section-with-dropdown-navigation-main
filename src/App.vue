@@ -1,5 +1,11 @@
 <script setup>
 import { ref } from "vue";
+
+function triggerMenu() {
+  const header = document.querySelector(`.header`);
+  header.classList.toggle(`menu-opened`);
+}
+
 const headerOptions = ref([
   {
     name: "Features",
@@ -109,13 +115,12 @@ const headerOptions = ref([
         </li>
       </ul>
     </nav>
+    <img class="header__menu-opener" alt="menu opener" @click="triggerMenu()" />
+    <div class="header__shadow-realm" @click="triggerMenu()"></div>
   </header>
   <main class="main">
     <div class="main__info">
-      <h1>
-        Make <br />
-        remote work
-      </h1>
+      <h1>Make <span>remote work</span></h1>
       <p>
         Get your team in sync, no matter your location. Streamline processes,
         create team rituals, and watch productivity soar.
@@ -128,11 +133,7 @@ const headerOptions = ref([
         <img src="/assets/client-maker.svg" alt="maker logo" />
       </div>
     </div>
-    <img
-      src="/assets/image-hero-desktop.png"
-      alt="some guy with a laptop"
-      class="main__giga-img"
-    />
+    <img alt="some guy with a laptop" class="main__giga-img" />
   </main>
 </template>
 
