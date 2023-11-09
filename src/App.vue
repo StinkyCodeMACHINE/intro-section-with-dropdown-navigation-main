@@ -115,12 +115,7 @@ const headerOptions = ref([
         </li>
       </ul>
     </nav>
-    <img
-      class="header__menu-opener"
-      src="dummy src"
-      alt="menu opener"
-      @click="triggerMenu()"
-    />
+    <img class="header__menu-opener" alt="menu opener" @click="triggerMenu()" />
     <div class="header__shadow-realm" @click="triggerMenu()"></div>
   </header>
   <main class="main">
@@ -138,7 +133,7 @@ const headerOptions = ref([
         <img src="/assets/client-maker.svg" alt="maker logo" />
       </div>
     </div>
-    <img alt="some guy with a laptop" src="dummy src" class="main__giga-img" />
+    <img alt="some guy with a laptop" class="main__giga-img" />
   </main>
 </template>
 
