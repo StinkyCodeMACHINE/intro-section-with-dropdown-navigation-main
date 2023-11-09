@@ -1,0 +1,53 @@
+@use "../util/functions" as u;
+
+.main {
+  padding: 2.4rem 8rem 2.4rem 10.3rem;
+  display: grid;
+  grid-template-columns: 57% 1fr;
+
+  &__info {
+    padding: 6.5rem 0;
+
+    h1 {
+      color: var(--almost-black);
+      font-size: 5rem;
+    }
+
+    p {
+      font-size: u.rem(18);
+      color: var(--medium-gray);
+      width: 70%;
+      line-height: 1.7rem;
+      margin-block: 3rem;
+    }
+
+    button {
+      color: var(--almost-white);
+      background-color: var(--almost-black);
+      padding: 1.3rem 1.9rem;
+      border-radius: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6.5rem;
+      cursor: pointer;
+      outline: none;
+      transition: 500ms color, background-color, outline ease-out;
+      &:hover {
+        color: var(--almost-black);
+        background-color: transparent;
+        outline: 1px solid var(--almost-black);
+      }
+    }
+
+    &__logos {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 70%;
+    }
+  }
+
+  &__giga-img {
+    width: 100%;
+  }
+}

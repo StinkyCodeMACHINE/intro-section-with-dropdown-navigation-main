@@ -1,0 +1,114 @@
+@use "../util/functions" as u;
+
+.header {
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+
+  @mixin headerFontSettings() {
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  nav {
+    flex-grow: 1;
+  }
+
+  &__logo {
+    margin-right: 4rem;
+  }
+
+  &__menu {
+    list-style: none;
+    display: flex;
+    gap: 2.6%;
+    @include headerFontSettings();
+
+    li {
+      display: grid;
+      place-items: center;
+    }
+
+    &__option-container {
+      position: relative;
+      &__option {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+
+        &__text {
+        }
+
+        &__arrow {
+        }
+      }
+
+      &__suboptions {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: 500ms opacity ease-in-out, 300ms transform ease-in-out;
+        background-color: var(--almost-white);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: 0 0 0.4rem 0.1rem var(--medium-gray);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        min-width: 100%;
+
+        &__suboption {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          font-size: 0.8rem;
+          font-weight: 700;
+          &__icon {
+          }
+
+          &__text {
+          }
+        }
+      }
+
+      &.hovered-over {
+        > .header__menu__option-container__option {
+          color: var(--almost-black);
+          .header__menu__option-container__option__arrow {
+            transform: rotate(180deg);
+          }
+        }
+
+        > .header__menu__option-container__suboptions {
+          opacity: 1;
+          transform: scaleY(1);
+        }
+      }
+    }
+
+    &__login {
+      @include headerFontSettings();
+      margin-left: auto;
+      button {
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+
+    &__register {
+      @include headerFontSettings();
+      button {
+        background-color: transparent;
+        cursor: pointer;
+        border: 1px solid var(--medium-gray);
+        padding: 0.7rem 1.3rem;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
