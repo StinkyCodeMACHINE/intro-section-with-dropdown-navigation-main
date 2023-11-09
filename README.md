@@ -19,7 +19,7 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
 
 ### Links
 
-- Live Site URL: [https://teal-sawine-28c0c5.netlify.app/](https://teal-sawine-28c0c5.netlify.app/)
+- Live Site URL: [https://amazing-tartufo-5c3bd7.netlify.app/](https://amazing-tartufo-5c3bd7.netlify.app/)
 
 ## My process
 
